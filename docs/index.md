@@ -5,7 +5,7 @@
 **key features**
 
 - reached score 24 000 .. 32 000 on Montezuma's revenge
-- only 128M samples (RND requires 4B samples, GoExplore requires 1B samples )
+- only 128M samples (GoExplore - 1B samples, RND - 4B samples, Never Give Up - 35B samples)
 - only single GPU training (arround 4days on RTX3060)
 - no demonstrations
 - no pretraining
