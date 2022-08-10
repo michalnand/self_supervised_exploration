@@ -5,11 +5,11 @@
 **key features**
 
 - reached score 24 000 .. 32 000 on Montezuma's revenge
-- no demostrations
-- no pretraining
-- no extra (domain knowledge) information provided
 - only 128M samples (RND requires 4B samples, GoExplore requires 1B samples )
 - only single GPU training (arround 4days on RTX3060)
+- no demonstrations
+- no pretraining
+- no extra (domain knowledge, agent/items positions ...) information provided
 
 
 
