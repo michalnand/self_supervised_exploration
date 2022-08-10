@@ -41,14 +41,7 @@ Based on ideas from Exploration by Random Network Distillation, Burda et alli, 2
 
 # results 
 
-**it can achieves 24 000 .. 32 000 points in Montezuma Revenge, in only 128M samples**
-
-- reached score 24 000 .. 32 000 on Montezuma's revenge
-- no demostrations
-- no pretraining
-- no extra (domain knowledge) information provided
-- only 128M samples
-- only single GPU training (arround 4days on RTX3060)
+## TODO
 
 
 
