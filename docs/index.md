@@ -1,37 +1,69 @@
-## Welcome to GitHub Pages - RL experiments
+# exploration by self-supervised exploitation
 
-You can use the [editor on GitHub](https://github.com/michalnand/self_supervised_exploration/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+**it can achieves 24 000 .. 32 000 points in Montezuma Revenge, in only 128M samples**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**key features**
 
-### Markdown
+- reached score 24 000 .. 32 000 on Montezuma's revenge
+- no demostrations
+- no pretraining
+- no extra (domain knowledge) information provided
+- only 128M samples (RND requires 4B samples, GoExplore requires 1B samples )
+- only single GPU training (arround 4days on RTX3060)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+![video](videos/montezuma_32k.gif) 
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+![result](results/ppo_cnd_21_summary.png)
 
-**Bold** and _Italic_ and `Code` text
+Based on ideas from Exploration by Random Network Distillation, Burda et alli, 2018, [arxive link](https://arxiv.org/abs/1810.12894)
 
-[Link](url) and ![Image](src)
-```
+### 1, main idea 
+**instead of distillation random target network, try to learn better features**
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### 2, motivation is generated from distillation of target model, same as in original RND paper
+![cnd_idea](diagrams/cnd1.png) 
 
-### Jekyll Themes
+### 3, instead of fixed random target model, target model is learned using contrastive learning
+![cnd_idea](diagrams/cnd0.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/michalnand/self_supervised_exploration/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+# results 
+
+**it can achieves 24 000 .. 32 000 points in Montezuma Revenge, in only 128M samples**
+
+- reached score 24 000 .. 32 000 on Montezuma's revenge
+- no demostrations
+- no pretraining
+- no extra (domain knowledge) information provided
+- only 128M samples
+- only single GPU training (arround 4days on RTX3060)
+
+
+
+
+# model architecture 
+
+## PPO actor + critic model architecture  
+
+- input downsampled into shape 4x96x96 (4 grayscale frames)
+- 4 conv layers
+- separated critic heads for internal and external values
+- initialised by orthogonal init
+- ReLU activation
+
+![model](diagrams/modelppo.png)
+
+## distilled models 
+
+- input downsampled into shape 1x96x96 (1 grayscale frames)
+- normalised by running mean and std
+- 3 conv layers
+- initialised by orthogonal init
+- ELU activation
+
+![model](diagrams/modelrnd.png)
