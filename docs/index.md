@@ -30,6 +30,12 @@ Based on ideas from Exploration by Random Network Distillation, Burda et alli, 2
 ### 3, instead of fixed random target model, target model is learned using contrastive learning
 ![cnd_idea](diagrams/cnd0.png)
 
+### 4, augmentations
+
+- tile masking, with 50% probability, 10% of area is masked by tiles with random size (1, 2, 4, 8, 12, 16)
+- every input is noised by uniform noise with amplitude (-0.2, 0.2)
+
+![cnd_idea](diagrams/augmentation.png)
 
 
 
