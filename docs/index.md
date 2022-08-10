@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to GitHub Pages - RL experiments
 
 You can use the [editor on GitHub](https://github.com/michalnand/self_supervised_exploration/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
