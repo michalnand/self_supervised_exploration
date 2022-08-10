@@ -9,6 +9,7 @@
 - only single GPU training (arround 4days on RTX3060)
 - no demonstrations
 - no pretraining
+- no environment saving/loading (no checkpoints)
 - no extra (domain knowledge, agent/items positions ...) information provided
 
 
