@@ -38,6 +38,19 @@ Based on ideas from Exploration by Random Network Distillation, Burda et alli, 2
 ![cnd_idea](diagrams/augmentation.png)
 
 
+# why it works better
+
+lets plot features space of target model
+
+- we projected 512D features into 2D using T-SNE
+- the color represents room ID
+
+**for random model (even with orthogonal weight init), model can distinguish different rooms well, but not capture details of rooms intself :**
+![cnd_features](diagrams/cnd_random.png)
+
+
+**when target model is trained by self-supervision, provided features have much bigger variance, which can explain better exploration :** 
+![cnd_features](diagrams/cnd_trained.png)
 
 # results 
 
