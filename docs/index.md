@@ -16,10 +16,37 @@
 
 ![video](videos/montezuma_32k.gif) 
 
-
 ![result](results/ppo_cnd_21_summary.png)
 
 Based on ideas from Exploration by Random Network Distillation, Burda et alli, 2018, [arxive link](https://arxiv.org/abs/1810.12894)
+
+
+
+# mastering procgen hard exploration seeds
+
+there are few seeds in Procgen Env which are not possible to solve
+withing 200M samples using common PPO
+
+even RND is not doing better ... 
+self-supervised exploration solved this games in just 64M steps
+
+caveflyer                      |  climber
+:-------------------------: |:-------------------------:
+![video](videos/caveflyer.gif) |  ![video](videos/climber.gif) 
+
+coinrun                      |  jumper
+:-------------------------: |:-------------------------:
+![video](videos/coinrun.gif) |  ![video](videos/jumper.gif) 
+
+- Procgen envs paper : 
+Leveraging Procedural Generation to Benchmark Reinforcement Learning, Cobbe et alli, 2019, [arxive link](https://arxiv.org/abs/1912.01588)
+- **for hard exploration seeds read section "B.1. Evaluating Exploration"**
+
+
+
+
+
+# how it works
 
 ### 1, main idea 
 **instead of distillation random target network, try to learn better features**
