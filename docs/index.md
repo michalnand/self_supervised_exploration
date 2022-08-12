@@ -32,11 +32,14 @@ self-supervised exploration solved this games in just 64M steps
 
 caveflyer                      |  climber
 :-------------------------: |:-------------------------:
-![video](videos/caveflyer.gif) |  ![video](videos/climber.gif) 
+<img src="videos/caveflyer.gif" width="150" height="150"> |  <img src="videos/climber.gif" width="150" height="150">
 
 coinrun                      |  jumper
 :-------------------------: |:-------------------------:
-![video](videos/coinrun.gif) |  ![video](videos/jumper.gif) 
+<img src="videos/coinrun.gif" width="150" height="150"> |  <img src="videos/jumper.gif" width="150" height="150">
+
+
+
 
 - Procgen envs paper : 
 Leveraging Procedural Generation to Benchmark Reinforcement Learning, Cobbe et alli, 2019, [arxive link](https://arxiv.org/abs/1912.01588)
